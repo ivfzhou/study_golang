@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package proto2;
+
+option go_package = "github.com/ivfzhou/study_golang/protobuf/proto2;proto2";
+
+message Req {
+  required int32 ID = 1;
+  optional group Data = 2 {
+    optional string name = 1 [default = "a"];
+    optional string addr = 2;
+  }
+  extensions 3 to 15, 16 to max;
+}
+
+extend Req {
+  optional string name = 3;
+}

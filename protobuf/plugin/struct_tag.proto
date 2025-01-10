@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package struct_tag;
+
+option go_package = "github.com/ivfzhou/study_golang/protobuf/plugin;main";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FieldOptions {
+  optional string tag = 5000;
+}

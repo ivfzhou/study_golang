@@ -11,6 +11,7 @@ require (
 	github.com/go-playground/validator/v10 v10.23.0
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/golang-jwt/jwt/v5 v5.2.1
+	github.com/ivfzhou/protobuf-go/cmd/protoc-gen-go/descriptor v1.28.1
 	github.com/rabbitmq/amqp091-go v1.10.0
 	github.com/rabbitmq/rabbitmq-stream-go-client v1.4.11
 	github.com/redis/go-redis/v9 v9.7.0
@@ -20,6 +21,7 @@ require (
 	golang.org/x/crypto v0.31.0
 	golang.org/x/sync v0.10.0
 	golang.org/x/text v0.21.0
+	google.golang.org/protobuf v1.34.1
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gorm.io/datatypes v1.2.5
 	gorm.io/driver/mysql v1.5.7
@@ -93,6 +95,5 @@ require (
 	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/tools v0.21.1-0.20240508182429-e35e4ccd0d2d // indirect
-	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package protobuf.import;
+
+option go_package = "github.com/ivfzhou/study_golang/protobuf/import;importing";
+
+import public "protobuf/public/sample.proto";
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.EnumValueOptions {
+  optional uint32 my_enum_value_option = 50000;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package protobuf.public;
+
+option go_package = "github.com/ivfzhou/study_golang/protobuf/public;public";
+
+message Data {
+  string name = 1;
+  uint32 age = 2;
+}

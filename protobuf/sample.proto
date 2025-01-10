@@ -1,0 +1,134 @@
+// protoc --go_out=./ --proto_path=./ protobuf/sample.proto
+syntax = "proto3"; // 默认 proto2。
+
+package protobuf; // 导入其它 message 时使用。
+
+option go_package = "github.com/ivfzhou/study_golang/protobuf;protobuf"; // 前部分为生成文件路径和包全称，后部分为生成文件包名（默认为前部分最后一个元素）。
+option java_package = "ivfzhou.java.protobuf"; // java 文件 class 名，如果未定义，使用 package 定义的值。
+option java_outer_classname = "Protobuf"; // 在编译成 java 代码时使用，如果未定义，使用将文件名转化为大驼峰格式的值。
+option java_multiple_files = true; // 默认生成一个 .java 文件，一个类，里面包含所有其它类。
+option csharp_namespace = "定义 C# 的包名";
+option optimize_for = SPEED; // SPEED CODE_SIZE LITE_RUNTIME
+option cc_generic_services = false;
+option java_generic_services = false;
+option py_generic_services = false;
+option cc_enable_arenas = true;
+option objc_class_prefix = "TPB";
+
+option (my_file_option) = "file_option";
+
+// 参照 --proto_path 定义。
+import "protobuf/import/sample.proto";
+import "google/protobuf/descriptor.proto"; // [50000-99999]
+import "google/protobuf/any.proto";
+import "custom_tag.proto";
+
+extend google.protobuf.FileOptions {
+  optional string my_file_option = 50000;
+}
+extend google.protobuf.ServiceOptions {
+  optional AllowAlias my_service_option = 50000;
+}
+extend google.protobuf.MethodOptions {
+  optional protobuf.public.Data my_method_option = 50000;
+}
+extend google.protobuf.MessageOptions {
+  optional int32 my_message_option = 50000;
+}
+extend google.protobuf.FieldOptions {
+  optional float my_field_option = 50000;
+  repeated string my_tag_option = 50001;
+}
+extend google.protobuf.OneofOptions {
+  optional int64 my_oneof_option = 50000;
+}
+extend google.protobuf.EnumOptions {
+  optional bool my_enum_option = 50000;
+}
+extend google.protobuf.EnumValueOptions {
+  optional uint32 my_enum_value_option = 50001;
+}
+
+service SearchService {
+  option (my_service_option) = ALLOW_ALIAS_UNSPECIFIED;
+  rpc Search(Req) returns (Rsp) {
+    // option (my_method_option).Age = 18;
+    // option (my_method_option).Name = "ivfzhou";
+    option (my_method_option) = {age: 18, name: "ivfzhou"};
+  };
+}
+
+message Req {
+  option (my_message_option) = 1;
+  oneof Query {
+    option (my_oneof_option) = 1;
+    int32 ID = 1;
+    string OBSOLETE_name = 2;
+  }
+  float P1 = 3 [(my_field_option) = 1.0, (my_tag_option) = "tag:\"tag\"" , (my_tag_option) = "tag:\"tag\"", (custom.tag) = "header:p1", (custom.tag) = "uri:p1"];
+  repeated AllowAlias e = 4 [packed = true, deprecated = true, json_name = "allowAliasEnum"];
+  reserved 5 to 15, 16 to 2047, 2048 to max;
+  reserved "name";
+}
+
+message Rsp {
+  google.protobuf.Any any = 1;
+  Inner.E e = 2;
+}
+
+enum AllowAlias {
+  option allow_alias = true;
+  option (my_enum_option) = true;
+  ALLOW_ALIAS_UNSPECIFIED = 0 [(my_enum_value_option) = 1, (protobuf.import.my_enum_value_option) = 2];
+  ALLOW_ALIAS_STARTED = 1;
+  ALLOW_ALIAS_RUNNING = 1;
+}
+
+message Inner {
+  enum E {
+    zero = 0;
+  }
+  message M {
+
+  }
+}
+
+message TestSample {
+  int32 num = 1;
+  sint32 num2 = 2;
+  string str = 3;
+  repeated int32 num3 = 4;
+  Test e = 5;
+  map<int32, string> m = 6;
+  message TestM {
+    int32 i = 1;
+  }
+  TestM tm = 7;
+  float f = 8;
+  sfixed32 fx = 9;
+  bytes bs = 10;
+  repeated KV kvs = 11;
+  repeated Test es = 12;
+  int32 num4 = 1025;
+}
+
+message KV {
+  int32 key = 1;
+  string value = 2;
+}
+
+enum Test {
+  TEST_UNSPECIFIED = 0;
+  TEST_FIRST = 1;
+}
+
+message TestAny {
+  google.protobuf.Any any = 1;
+}
+
+message TestOneof {
+  oneof One {
+    string a = 3;
+    int32 b = 1;
+  }
+}
