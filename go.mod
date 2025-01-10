@@ -15,6 +15,7 @@ require (
 	golang.org/x/crypto v0.31.0
 	golang.org/x/sync v0.10.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
+	software.sslmate.com/src/go-pkcs12 v0.5.0
 )
 
 require (
