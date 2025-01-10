@@ -21,7 +21,7 @@ option (my_file_option) = "file_option";
 import "protobuf/import/sample.proto";
 import "google/protobuf/descriptor.proto"; // [50000-99999]
 import "google/protobuf/any.proto";
-import "custom_tag.proto";
+import "custom_tag.proto"; // 看 https://github.com/ivfzhou/protobuf-go
 
 extend google.protobuf.FileOptions {
   optional string my_file_option = 50000;
