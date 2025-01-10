@@ -1,0 +1,36 @@
+module (
+  github.com/ivfzhou/study_golang
+)
+
+// Deprecated: xxx instead.
+module github.com/ivfzhou/golang // Deprecated: xxx
+
+go 1.17 // minimum-go-version
+
+replace (
+	github.com/ivfzhou/gstub => ../gstub
+	github.com/ivfzhou/gstub v0.0.0-unpublished => ../gstub
+)
+
+exclude (
+	github.com/ivfzhou/gstub v0.0.0-unpublished
+)
+
+// xxx
+retract (
+	v0.0.0
+	[v0.0.0, v1.0.0] // xxx
+)
+
+retract v0.0.0 // xxx
+
+retract [v0.0.0, v1.0.0]
+
+require (
+	github.com/ivfzhou/gstub baseVersionPrefix-timestamp-revisionIdentifier(12-chars)
+	github.com/ivfzhou/gstub git_tag
+	github.com/ivfzhou/gstub branch
+	github.com/ivfzhou/gstub stub/v0.0.0
+	github.com/ivfzhou/gstub v0.0.0-unpublished
+	"github.com/ivfzhou/gstub" "v1.6.0"
+)
