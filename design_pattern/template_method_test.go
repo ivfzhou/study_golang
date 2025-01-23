@@ -11,6 +11,11 @@ import (
 	"testing"
 )
 
+/*
+身份校验，有发送短信和邮件两种方式。除了发送方式不同，其它逻辑相同。
+两种方式都实现 OTP，他们共用 OTPImpl 逻辑，但各自实现发送逻辑。
+*/
+
 func TestTemplateMethod(t *testing.T) {
 	var o OTP
 

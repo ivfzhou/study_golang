@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+全局只有一个对象实例。
+*/
+
 func TestSingleton(t *testing.T) {
 	for i := 0; i < 30; i++ {
 		go GetInstance()

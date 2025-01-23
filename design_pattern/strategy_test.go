@@ -7,6 +7,11 @@ package design_pattern_test
 
 import "testing"
 
+/*
+缓存器有不同地缓存过期策略，
+缓存器对象可设置不同的策略对象，以实现不同缓存过期策略。
+*/
+
 func TestStrategy(t *testing.T) {
 	c := &Cache{}
 	var lru EvictionAlgo = &Lru{}

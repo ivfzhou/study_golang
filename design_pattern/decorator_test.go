@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+/*
+有披萨，不同类型的披萨包含披萨。
+*/
+
 func TestDecorator(t *testing.T) {
 	var pizza IPizza = &VeggieMania{}
 

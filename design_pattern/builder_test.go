@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+建筑师可以使用不同的建筑方式造房子。
+*/
+
 func TestBuilder(*testing.T) {
 	var normalBuilder IBuilder = GetBuilder("normal")
 	var iglooBuilder IBuilder = GetBuilder("igloo")

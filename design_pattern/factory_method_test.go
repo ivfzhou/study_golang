@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+有不同类型的枪。
+*/
+
 func TestFactoryMethod(t *testing.T) {
 	ak47, _ := GetGun("ak47")
 	musket, _ := GetGun("Musket")

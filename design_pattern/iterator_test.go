@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+用户集合类创建出迭代器类，迭代器类可遍历所有用户。
+*/
+
 func TestIterator(t *testing.T) {
 	user1 := &User{
 		Name: "a",

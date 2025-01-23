@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+有不同类型的电脑，不同类型的打印机。电脑可以使用不同的打印机打印。
+*/
+
 func TestBridge(t *testing.T) {
 	var hpPrinter Printer = &Hp{}
 	var epsonPrinter Printer = &Epson{}

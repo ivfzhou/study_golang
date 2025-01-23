@@ -10,6 +10,12 @@ import (
 	"testing"
 )
 
+/*
+访问者有面积计算和坐标计算，
+图形有正方形、圆形和长方形，
+图形对象设置访问者，访问者计算出值。
+*/
+
 func TestVisitor(t *testing.T) {
 	var square Shape = &Square{Side: 2}
 	var circle Shape = &Circle{Radius: 3}

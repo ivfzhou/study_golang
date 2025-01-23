@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+/*
+货物类将消费者设置为观察者，当货物更新时，调用观察者方法。
+*/
+
 func TestObserver(t *testing.T) {
 	shirtItem := NewItem("Nike Shirt")
 

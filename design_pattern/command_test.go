@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+有一个设备是电视，设置到不同的按钮下，触发不同的功能。
+*/
+
 func TestCommand(t *testing.T) {
 	var tv Device = &TV{}
 

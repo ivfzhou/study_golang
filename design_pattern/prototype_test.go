@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+/*
+文件和文件夹类复制一份自己。
+*/
+
 func TestPrototype(t *testing.T) {
 	var file1 Inode = &File_{name: "File1"}
 	var file2 Inode = &File_{name: "File2"}

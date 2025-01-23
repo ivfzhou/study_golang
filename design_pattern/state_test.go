@@ -9,6 +9,11 @@ import (
 	"testing"
 )
 
+/*
+一个提供货物的机器，它有有货、无货、待投币、已投币四种状态。
+四个状态用四个类实现，调用机器功能时，状态在这些类中切换。
+*/
+
 func TestState(t *testing.T) {
 	vendingMachine := NewVendingMachine(1, 10)
 

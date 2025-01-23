@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+/*
+文件和文件夹，文件夹包含文件。
+*/
+
 func TestComposite(t *testing.T) {
 	var file1 Component = &File{name: "File1"}
 	var file2 Component = &File{name: "File2"}

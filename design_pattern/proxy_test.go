@@ -12,6 +12,10 @@ import (
 	"testing"
 )
 
+/*
+Nginx 代理了应用服务，将请求处理后再调用应用类的方法。
+*/
+
 func TestProxy(t *testing.T) {
 	nginxServer := NewNginxServer()
 	appStatusURL := "/app/status"

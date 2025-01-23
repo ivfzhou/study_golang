@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+/*
+钱包功能，结合了账户等其他功能。
+*/
+
 func TestFacade(t *testing.T) {
 	walletFacade := NewWalletFacade("abc", 1234)
 

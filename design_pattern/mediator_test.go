@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+车站有旅客和货物到达，中间者车站管理站管理他们到达顺序。
+*/
+
 func TestMediator(t *testing.T) {
 	stationManager := NewStationManger()
 

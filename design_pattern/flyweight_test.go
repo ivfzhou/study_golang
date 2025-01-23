@@ -7,6 +7,10 @@ import (
 	"testing"
 )
 
+/*
+游戏中有角色衣服，衣服由衣服工厂提供。同一件衣服可以给角色共用。
+*/
+
 func TestFlyweight(t *testing.T) {
 	game := NewGame()
 
@@ -124,25 +128,25 @@ func (p *Player) newLocation(lat, long int) {
 
 // =
 
-type game struct {
+type Game struct {
 	terrorists        []*Player
 	counterTerrorists []*Player
 }
 
-func NewGame() *game {
-	return &game{
+func NewGame() *Game {
+	return &Game{
 		terrorists:        make([]*Player, 1),
 		counterTerrorists: make([]*Player, 1),
 	}
 }
 
-func (c *game) AddTerrorist(dressType string) {
+func (c *Game) AddTerrorist(dressType string) {
 	player := NewPlayer("T", dressType)
 	c.terrorists = append(c.terrorists, player)
 	return
 }
 
-func (c *game) AddCounterTerrorist(dressType string) {
+func (c *Game) AddCounterTerrorist(dressType string) {
 	player := NewPlayer("CT", dressType)
 	c.counterTerrorists = append(c.counterTerrorists, player)
 	return

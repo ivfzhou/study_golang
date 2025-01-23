@@ -9,6 +9,10 @@ import (
 	"testing"
 )
 
+/*
+医院部门有很多需要按流程的服务，病人按次序被服务。
+*/
+
 func TestChainOfResponsibility(t *testing.T) {
 	var cashier Department = &Cashier{}
 

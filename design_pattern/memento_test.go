@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+/*
+管理员管理笔记，写作者写作的笔记都给管理员保存，然后写作者能恢复以前写的笔记。
+*/
+
 func TestMemento(t *testing.T) {
 	caretaker := &Caretaker{
 		mementoArray: make([]*Memento, 0),
