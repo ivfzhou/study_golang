@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<server type="web" any="xxx">
+    <!-- Provide shopping, email and other services. -->
+    <name info="info">web</name>
+    <secret>
+        <name>admin</name>
+        <password>123456</password>
+    </secret>
+    <![CDATA[
+        this is character data.
+    ]]>
+    <service name="email">
+        <ip>127.0.0.1</ip>
+        <port>80</port>
+        <location>beijing</location>
+    </service>
+    <service name="shopping">
+        <ip>::1</ip>
+        <port>443</port>
+        <location>shanghai</location>
+    </service>
+</server>

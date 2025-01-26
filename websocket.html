@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Websocket</title>
+</head>
+<body>
+<div>
+    <p id="rsp">response</p>
+    <table>
+        <tr>
+            <td><textarea id="req"></textarea></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="send()">SEND</button>
+            </td>
+            <td>
+                <button type="button" onclick="close()">CLOSE</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    let socket = new WebSocket("ws://127.0.0.1:12345");
+    const rsp = document.getElementById("rsp");
+    socket.onopen = function () {
+        console.log("connected")
+    }
+    socket.onclose = function (e) {
+        console.log("connection closed", e.code)
+    }
+    socket.onmessage = function (e) {
+        rsp.innerText = e.data
+    }
+    socket.onerror = function (e) {
+        console.log(e)
+    }
+
+    function send() {
+        let req = document.getElementById("req").value
+        socket.send(req)
+    }
+
+    function close() {
+        socket.close(0, "")
+        console.log("closing")
+    }
+</script>
+</body>
+</html>

@@ -27,7 +27,6 @@ func ChannelLock(incr int) {
 	fmt.Println(QueryValue())
 }
 
-
 var (
 	ch  = make(chan struct{}, 1)
 	val int
