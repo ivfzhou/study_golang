@@ -22,7 +22,7 @@ import (
 )
 
 func main() {
-	to := 10
+	to := 15
 	switch to {
 	case 1:
 		x := byte(1)
@@ -65,6 +65,11 @@ func main() {
 		shortestPath()
 	case 14:
 		websocketServer()
+	case 15:
+		arr := bytes.Split([]byte("1="), []byte("="))
+		fmt.Println(len(arr))
+		fmt.Println(string(arr[0]))
+		fmt.Println(string(arr[1]))
 	}
 }
 

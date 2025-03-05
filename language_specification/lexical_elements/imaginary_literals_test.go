@@ -13,7 +13,7 @@ const (
 
 	// 八进制
 	Im5 complex128 = 0o1i // 1i
-	Im6 complex128 = 01i   // 1i
+	Im6 complex128 = 1i   // 1i
 
 	// 十六进制
 	Im7 complex128 = 0x1i   // 1i
